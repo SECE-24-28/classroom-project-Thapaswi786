@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Demo</title>
+</head>
+    <style>
+        body
+        {
+            background-color: rgb(239, 244, 119);
+        }
+        .container{
+            height:100vh;
+            background-color: rgb(84, 3, 55);
+            justify-content:center;
+            align-items:center;
+            gap:10px;
+            display:flex;
+            flex-direction:row;
+            flex-wrap:wrap
+        }
+       .box{
+             width:100px;
+             height:100px;
+             background-color:rgb(104, 72, 232);
+             color:white;
+             }
+</style>
+<body>
+    <div class="container"> 
+        <div class="box">Item1</div>
+        <div class="box">Item2</div>
+        <div class="box">Item3</div>    
+        <div class="box">Item4</div>
+        <div class="box">Item5</div>
+        <div class="box">Item6</div>
+    </div>
+</body>
+</html>

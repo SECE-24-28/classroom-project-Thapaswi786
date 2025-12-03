@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body
+            {
+                height: 200vh;
+                background-color:cornsilk;
+            }
+            .outer-container
+            {
+                border: 1px solid black;
+                background-color:rgb(240, 29, 201)
+                width: 90vw;
+                height: 80vh;
+                margin: 20px auto;
+            }
+            .inner-container
+            {
+                border: 1px solid  rgb(255, 0, 221);
+                background-color: navy;
+                width: 75vw;
+                height: 70vh;
+                margin: 20px auto;
+            }
+            .box
+            {
+                color: white;
+                background-color: aqua;
+                width: 100px;
+                height: 100px;
+                border: 1px solid black;
+            }
+            .abs
+            {
+                background-color: green;
+                position: absolute;
+                top: 100px;
+                left: 100px;
+            }
+            .rel
+            {
+                background-color: blue;
+                position: relative;
+                top: 150px;
+                left: 0px;
+            }
+            .fix
+            {
+                background-color: yellow;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+            }
+            .sti
+            {
+                background-color: red;
+                position: sticky;
+                top: 298px;
+                left: 302px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="outer-container">
+            <div class="inner-container">
+            <div class="box abs">absolute</div>
+            <div class="box rel">relative</div>
+            <div class="box fix">fixed</div>
+            <div class="box sti">sticky</div>
+        </div>
+    </body>
+</html>
