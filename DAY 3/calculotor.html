@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body
+        {
+            background-color: pink;
+        }
+        button
+        {
+            color: yellow;
+            background-color: red;
+        }
+        input
+        {
+            color: rgb(183, 0, 255);
+            background-color: aqua;
+        }
+        .outer-container
+        {
+            background-color: aquamarine;
+            width: 90vw;
+            height: 80vh;
+            margin: 20px auto;
+        }
+        .inner-container
+        {
+            border: 1px solid  rgb(47, 211, 178);
+            background-color: rgb(17, 150, 86);
+            width : 75vw;
+            height: 70vh;
+            margin: 20px auto;
+        }
+    </style>
+    <script>
+        function add()
+        {
+            let a=parseInt(document.getElementById("t1").value);
+            let b=parseInt(document.getElementById("t2").value);
+            let c=a+b;
+            document.getElementById("t3").value = c;
+        }
+        function sub()
+        {
+            let a=parseInt(document.getElementById("t1").value);
+            let b=parseInt(document.getElementById("t2").value);
+            let c=a-b;
+            document.getElementById("t3").value = c;
+        }
+        function mul()
+        {
+            let a=parseInt(document.getElementById("t1").value);
+            let b=parseInt(document.getElementById("t2").value);
+            let c=a*b;
+            document.getElementById("t3").value = c;
+        }
+        function div()
+        {
+            let a=parseInt(document.getElementById("t1").value);
+            let b=parseInt(document.getElementById("t2").value);
+            let c=a/b;
+            document.getElementById("t3").value = c;
+        }
+    </script>
+</head>
+    <body>
+        <div class="outer-container">
+            <div class="inner-container">
+                <input type="text" placeholder="Enter First Number" id="t1">
+                <br><br>
+                <input type="text" placeholder="Enter Second Number" id="t2">
+                <br><br>
+                <input type="text" placeholder="Answer" id="t3">
+                <br><br>
+                <button onclick="add()">+</button>
+                <button onclick="sub()">-</button>
+                <button onclick="mul()">*</button>
+                <button onclick="div()">/</button>
+            </div>
+        </div>
+    </body>
+</html>
