@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1>Gallary</h1>
+        <style>
+            body
+            {
+                background-color: blanchedalmond;
+            }
+            button
+            {
+                padding: 10px;
+                border-radius: 10px;
+            }
+            button:hover
+            {
+                letter-spacing: 4px;
+            }
+        </style>
+        <script>
+            let num = 0;
+            let arr = ["C:/Users/thapa/Downloads/coffeee shop image.jpg", "C:/Users/thapa/Downloads/chocolate_image.webp", 
+            "C:/Users/thapa/Downloads/computerimage.webp","C:/Users/thapa/Downloads/coffeeshopmenu.avif",
+             "C:/Users/thapa/OneDrive/Documents/WH.png","C:/Users/thapa/OneDrive/Documents/TW.png","C:/Users/thapa/OneDrive/Documents/FB.png"]; 
+            let index = 0
+            function next()
+            {
+                num++;
+                if(num>2)
+                    num=0;
+            let img= document.getElementById("im");
+            img.src=arr[num]
+            }
+            function previous()
+            {
+                num--;
+                if(num<0)
+                    num=2;
+            let img = document.getElementById("im");
+            img.src=arr[num];
+            }
+        </script>
+    </head>
+    <body>
+        <img src="C:\Users\thapa\Downloads\coffeee shop image.jpg" alt="" width="400 px" height="400px" id="im">
+        <br>
+        <button onclick="next()">Next</button>
+        <button onclick="previous()">Previous</button>
+    </body>
+</html>
