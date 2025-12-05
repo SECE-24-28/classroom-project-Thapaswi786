@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADD ITEMS</title>
+        <script>
+            count = 1;
+            function addTask()
+            {
+                let taskInput = document.getElementById("taskInput");
+                let task = taskInput.value;
+
+                if(task.trim() === "") {
+                    alert("Please enter a task.");
+                    return;
+                }
+
+                let taskItem = document.createElement("p");
+                taskItem.innerHTML = count+" "+task;
+
+                document.body.appendChild(taskItem);
+                count++;
+
+                taskInput.value = "";
+            }
+        </script>
+        <style>
+            body
+            {
+                padding: 50px;
+                justify-content: center;
+                align-items: center;
+                color: rgb(122, 0, 0);
+                background-color: rgb(146, 146, 205);
+                height: 100px;
+                width: 100px;
+            }
+            h1
+            {
+                color: rgb(5, 75, 78);
+                left: 70px;
+                top: 100px;
+            }
+            .inner-container
+            {
+                border: 1px solid  rgb(227, 163, 219);
+                background-color: antiquewhite;
+                justify-content: center;
+                width: 20vw;
+                height: 20vh;
+                margin: 100px auto;
+                right: 500;
+                align-items: center;
+            }
+            button
+            {
+                color: rgb(4, 106, 106);
+                background-color: rgb(203, 196, 183);
+            }
+            button:hover
+            {
+                letter-spacing: -1px;
+            }
+        </style>
+    </head>
+    <body>
+            <div class="inner-container">
+            <h1>Enter Items</h1>
+            <input type="text" id="taskInput" placeholder="Enter a Items">
+            <button onclick="addTask()">Add Items</button>
+            </div>
+    </body>
+</html>
