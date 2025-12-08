@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search with Table</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        #t1 {
+            padding: 8px;
+            width: 220px;
+            border: 1px solid black;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        #clearBtn {
+            padding: 8px 12px;
+            border: none;
+            background: red;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #clearBtn:hover {
+            background: darkred;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        th {
+            background: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" id="t1" placeholder="search...">
+    <button id="clearBtn" onclick="clearSearch()">Clear</button>
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <script>
+        let t1 = document.getElementById("t1");
+        let tableBody = document.getElementById("tableBody");
+
+        let frnds = [
+            { name: "Abu", email: "abu@gmail.com", address: "Chennai" },
+            { name: "Arun", email: "arun@gmail.com", address: "Madurai" },
+            { name: "Bala", email: "bala@gmail.com", address: "Coimbatore" },
+            { name: "Bharat", email: "bharat@gmail.com", address: "Salem" },
+            { name: "Vimal", email: "vimal@gmail.com", address: "Trichy" },
+            { name: "Vinoth", email: "vinoth@gmail.com", address: "Pondy" },
+            { name: "Shree", email: "shree@gmail.com", address: "Theni" },
+            { name: "yuva", email: "yuva@gmail.com", address: "Kovai" },
+            { name: "sureka", email: "sureka@gmail.com", address: "Karur" },
+            { name: "yesho", email: "yesho@gmail.com", address: "Erode" },
+            { name: "Thapas", email: "thapas@gmail.com", address: "Dindigul" },
+            { name: "sudharshana", email: "sudha@gmail.com", address: "Tirunelveli" }
+        ];
+
+        function displayData(list) {
+            tableBody.innerHTML = "";
+            list.forEach(obj => {
+                let tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${obj.name}</td>
+                    <td>${obj.email}</td>
+                    <td>${obj.address}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        function demo() {
+            t1.value = t1.value.toLowerCase();
+
+            let filtered = frnds.filter(f =>
+                f.name.toLowerCase().includes(t1.value)
+            );
+
+            displayData(filtered);
+        }
+
+        function clearSearch() {
+            t1.value = "";
+            displayData(frnds);
+        }
+
+        t1.addEventListener("keyup", demo);
+
+        displayData(frnds);
+    </script>
+
+</body>
+</html>

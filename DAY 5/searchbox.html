@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch + Search</title>
+    <style>
+        body
+        {
+            background-color: lightgray;
+            padding-left: 30px;
+            padding-top: 20px;
+        }
+        h1
+        {
+            color: tomato;
+        }
+        button
+        {
+            color: rgb(244, 140, 5);
+            background-color: aliceblue;
+        }
+        input
+        {
+            background-color: wheat;
+            color: rgb(6, 19, 135);
+            font-size: larger;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Click Fetch info to fetch the data</h2>
+
+    <button id="bt" onclick="fetchRecords()">Fetch Info</button>
+
+    <br><br>
+
+    <input type="text" id="searchBox" placeholder="Search by name..." onkeyup="searchName()">
+
+    <div id="main"></div>
+
+    <script>
+
+        let allUsers = []; 
+
+        async function fetchRecords() {
+            let res = await fetch("https://jsonplaceholder.typicode.com/users");
+            let data = await res.json();
+
+            allUsers = data;  
+            displayUsers(allUsers);
+        }
+
+        function displayUsers(users) {
+            let main = document.getElementById("main");
+            main.innerHTML = "";
+
+            users.forEach(obj => {
+                let dv = document.createElement("div");
+                dv.style.margin = "10px 0";
+                dv.style.padding = "10px";
+                dv.style.border = "1px solid black";
+                dv.style.color="red";
+                dv.style.backgroundColor="aqua";
+
+                dv.innerHTML = `
+                    <b>${obj.name}</b><br>
+                    ${obj.username}<br>
+                    ${obj.email}
+                `;
+                main.appendChild(dv);
+            });
+        }
+
+        function searchName() {
+            let text = document.getElementById("searchBox").value.toLowerCase();
+
+            let filtered = allUsers.filter(user =>
+                user.name.toLowerCase().includes(text)
+            );
+
+            displayUsers(filtered);
+        }
+
+    </script>
+
+</body>
+</html>
