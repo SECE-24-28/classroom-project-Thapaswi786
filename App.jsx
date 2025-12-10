@@ -2,17 +2,37 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './Header';
+import { Body } from './Body';
+import { Footer } from './Footer';
 
-function App() {
+function App() 
+{
+      const [list,setList] =useState([
+        {id:1,sname:"Vinoth",fee:true},
+        {id:2,sname:"Shiva",fee:false},
+        {id:3,sname:"Harish",fee:true}
+      ]);
 
-  let city = "Kovai"
-  let nums=[11,22,33]
+      const handleDelete=(id)=>
+      {
+      const newList=list.filter((ls)=>ls.id!=id)
+      setList(newList)
+      }
+      const handleCheck=(id)=>
+      {
+         const newList=list.map((ls)=>(ls.id===id)?({...ls,fee:!ls.fee}):(ls))
+         setList(newList)
+      }
+      
   return (
     <>
-      <p>HAi I'm from {city}</p>
-      <p>Lucky Number : {[10, 20, 30]}</p>
-      <p>{"true"}</p> 
-      <p>{JSON.stringify({name:"Rohit", age:40})}</p>
+        <Header title={"Student List"}/>
+        <Body list={list}
+              handleCheck={handleCheck}
+              handleDelete={handleDelete}
+        />
+           <Footer len={list.length} />
     </>
   )
 }
