@@ -1,0 +1,34 @@
+{
+  "feedback": [
+    {
+      "id": "1",
+      "title": "MERN Post",
+      "datetime": "DEC 1,2025 9:15:45 AM",
+      "body": "MERN Post Details, This Post is about MERN"
+    },
+    {
+      "id": "2",
+      "title": "HTML Post",
+      "datetime": "DEC 2,2025 12:35:23 AM",
+      "body": "HTML Post Details, This Post is about HTML"
+    },
+    {
+      "id": "3",
+      "title": "REACT Post",
+      "datetime": "DEC 11,2025 10:15:56 AM",
+      "body": "REACT Post Details, This Post is about React on MERN"
+    },
+    {
+      "id": 4,
+      "title": "CSS Post",
+      "datetime": "Dec 11 2025 2:44:58 PM",
+      "body": "CSS Post Details, This Post is about CSS"
+    },
+    {
+      "id": 5,
+      "title": "JAVA Post",
+      "datetime": "Dec 11 2025 2:46:49 PM",
+      "body": "JAVA is an interesting subject  "
+    }
+  ]
+}

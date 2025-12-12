@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import DataContext from './context/DataContext'
 
 const Home = () => {
+    const {searchResult}=useContext(DataContext)
   return (
     <div>
-        <h1>Home</h1>
+        {
+        searchResult.map((post)=>
+          <div key={post.id}>
+            <h3>{post.title}</h3>
+            <p>{post.datetime}</p>
+            <p>{post.body}</p>
+            <hr />
+          </div>
+        )
+      }
     </div>
   )
 }

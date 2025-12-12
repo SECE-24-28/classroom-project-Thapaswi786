@@ -1,14 +1,35 @@
+input
+{
+  font-size: large;
+}
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+h3
+{
+  color: rgb(65, 225, 153);
+}
 body
 {
-    color: black;
-    background-color: wheat;
-    padding: 50px;
+  color: rgb(244, 10, 49);
+  background-color: wheat;
 }
-h1
+button
 {
-    color:darkmagenta;
+  color: yellow;
+  background-color: red;
+  border-color: brown;
 }
-li
+input
 {
-    color: darkolivegreen;
+  color: darkblue;
+  background-color: aquamarine;
+}
+textarea
+{
+  color: darkblue;
+  background-color: aquamarine;
 }
